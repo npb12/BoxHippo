@@ -1,0 +1,44 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+
+<div class="container">
+<section id ="" class="section dark">
+  <div class="panel-group">
+      {% for l in listings %}
+        <div class="text-left row" style="background-color:#f8f8f8; padding: 5px; border: 1px solid #e8e8e8">
+          <div class="col-lg-12">
+            <article>
+              <h6>{{ l.title }}</h6>
+              <span class="sub-title">{{ l.owner.userprofile.companyName }}</span>
+	       <hr>
+              <div class="col-lg-1">
+		Picture here
+	      </div>
+              <div class="col-lg-9 col-pull-right">
+                <p>
+                  <small>
+                    {{ l.description|truncatewords:25 }}
+                  </small>
+                </p>
+              </div>
+              <div class="col-lg-2 col-pull-right">
+		<div class="text-center">
+		  <h3>${{ l.price }}</h3>
+		</div>
+		<div class="text-center">
+                  <a href="" class="btn btn-primary btn-xs">View Details</a>
+		</div>
+		<div class="clear"><br></div>
+              </div>
+            </article>
+          </div>
+	</div>
+        <div class="clear">
+        <br>
+        </div>
+      {% endfor %}
+  </div>
+</section>
+</div>
+{% endblock %}

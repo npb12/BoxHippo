@@ -1,0 +1,46 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+<div class="static-header light">
+  <div class="text-heading" style="padding-top:5px">
+    <h1>Hey there!<h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <form class="form form-register dark" action="" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username" class="col-sm-4 control-label">Username</label>
+            <div class="col-sm-8">
+              {% load widget_tweaks %}
+              {{ form.username|add_class:"form-control" }}
+              {% if form.username.errors %}
+              <br>
+              {{ form.username.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Password</label>
+            <div class="col-sm-8">
+              {% load widget_tweaks %}
+              {{ form.password|add_class:"form-control" }}
+              {% if form.password.errors %}
+              <br>
+              {{ form.password.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login"></input>
+          <div style="text-align: center"><a href="/register/">create a free account</a></div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,58 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+<div class="static-header light">
+  <div class="text-heading" style="padding-top:5px;">
+    <h1>Dashboard - {{ user }}</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form form-register dark">
+          <table width=100% class="bh-table">
+            <tr>
+              <td width="50%" valign="top">
+                <span class="bh-section-heading">Profile Details</span><br>
+                <table class="table">
+                  <tr><td width=80>Username:</td><td>{{ user.username }}</td></tr>
+                  <tr><td>Company:</td><td>{{ user.userprofile.companyName }}</td></tr>
+                  <tr><td>Website:</td><td>{{ user.userprofile.website }}</td></tr>
+                  <tr><td>Facebook:</td><td>{{ user.userprofile.facebook }}</td></tr>
+                  <tr><td>Email:</td><td>{{ user.userprofile.email }}</td></tr>
+                </table>
+                <a href="{% url 'users.views.profile' %}" class="btn btn-primary">Edit Profile</a>
+              </td>
+              <td width="50%" valign="top">
+                <span class="bh-section-heading">Your Listings</span><br>
+                <table class="table">
+                  {% for l in listings %}
+                    <tr><td valign="middle">{{ l }}</td><td valign="middle" width=80><a href="{% url 'listings.views.edit_listing' l.pk %}" class="btn btn-primary">Manage</a></td></tr>
+                  {% endfor %}
+                </table>
+              </td>
+            </tr>
+  
+            <tr><td colspan=2><hr></td></tr>
+
+            <tr>
+              <td colspan=2>
+                <span class="bh-section-heading" style="text-align: center">Metrics Panel</span>
+                <br><br>
+                <center>
+                Coming soon...
+                </center>
+              </td>
+            </tr>
+
+              
+          </table>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+
+

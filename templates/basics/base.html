@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>BoxHippo</title>
+    <meta name="description" content="Startups template">
+    <meta name="keywords" content="Startups template">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/apple-touch-icon.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114.jpg">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/font-lineicons.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/toastr.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="all" />
+    
+    <!--[if lt IE 9]>
+        <script src="{{ STATIC_URL }}js/html5.js"></script>
+        <script src="{{ STATIC_URL }}js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    {% include "basics/main_nav.html" %}
+      
+    <div id="body">
+      
+      <!-- Gives space for navbar -->
+      <div class="gap light footer">
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <div>
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+      {% include "basics/footer.html" %}
+
+
+    </div>
+      
+    <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
+    
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.11.0.min.js?ver=1"></script>
+    <![endif]-->  
+    <!--[if (gte IE 9) | (!IE)]><!-->  
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.1.0.min.js?ver=1"></script>
+    <!--<![endif]-->  
+    
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.nav.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.appear.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/waypoints-sticky.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/toastr.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/headhesive.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}mailchimp/js/mailing-list.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/scripts.js"></script>
+  </body>
+</html>

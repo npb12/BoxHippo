@@ -1,0 +1,69 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+<div class="static-header light">
+  <div class="text-heading" style="padding-top:5px">
+    <h1>Listing Details</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form class="form form-register dark" action="" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="title" class="col-lg-2 control-label">{{ form.title.label }}</label>
+            <div class="col-lg-10">
+              {% load widget_tweaks %}
+              {{ form.title|add_class:"form-control" }}
+              {% if form.title.errors %}
+              <br>
+              {{ form.title.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="webpage" class="col-lg-2 control-label">{{ form.webpage.label }}</label>
+            <div class="col-lg-10">
+              {% load widget_tweaks %}
+              {{ form.webpage|add_class:"form-control" }}
+              {% if form.webpage.errors %}
+              <br>
+              {{ form.webpage.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-lg-2 control-label">{{ form.description.label }}</label>
+            <div class="col-lg-10">
+              {% load widget_tweaks %}
+              {{ form.description|add_class:"form-control"|attr:"rows:5" }}
+              {% if form.description.errors %}
+              <br>
+              {{ form.description.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="col-lg-2 control-label">{{ form.price.label }}</label>
+            <div class="col-lg-10">
+              {% load widget_tweaks %}
+              {{ form.price|add_class:"form-control" }}
+              {% if form.price.errors %}
+              <br>
+              {{ form.price.errors }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-lg-4 col-lg-offset-4">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save"></input>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+
+

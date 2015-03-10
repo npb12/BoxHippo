@@ -1,0 +1,22 @@
+<ul class="navigation-bar navigation-bar-right">
+  {% if user.is_authenticated %}
+    <li>
+      <div class="dropdown">
+        <button class="light btn btn-default dropdown-toggle" style="background: transparent; color: #1ac6ff; border: 1px solid #1ac6ff;" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          {{ user }}
+          <span class="caret">
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelldby="dropdownMenu1">
+          <li><a role="menuitem" tabindex="-1" href="/user/dashboard/">Dashboard</a></li>
+          <li><a role="menuitem" tabindex="-1" href="/whmcs/whmcs/index.php">Account</a></li>
+          <li><a role="menuitem" tabindex="-1" href="/accounts/logout/?next=/">Logout</a></li>
+        </ul>
+      </div>
+    </li>
+  {% else %}
+    <li><a href="/accounts/login/?next=/listings/">Login</a></li>
+    <li class="featured"><a href="/register/">Sign up</a></li>
+  {% endif %}
+</ul>  
