@@ -13,7 +13,7 @@ class UserProfile(models.Model):
   maxListings = models.IntegerField(default=0, verbose_name = "Maximum Listings")
 
   def __unicode__(self):
-    return self.user
+    return self.user.username
 
   class Meta:
     ordering = ['companyName']

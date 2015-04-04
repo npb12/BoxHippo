@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from listings.models import Listing, ListingForm
+from django.contrib.auth.decorators import login_required
 
 # Simple function for all listings
 def listings(request):
@@ -10,6 +11,15 @@ def listings(request):
   }
   return render(request, "pages/listings/listings.html", c)
 
+def view_listing(request, lid):
+  listing = Listing.objects.get(pk = lid)
+  c = {
+    'listing': listing,
+  }
+
+  return render(request, "pages/listings/view_listing.html", c)
+
+@login_required
 def edit_listing(request, listingID):
   if request.method == 'POST':
     if listingID == 'N':
@@ -21,7 +31,7 @@ def edit_listing(request, listingID):
       tmp = form.save(commit=False)
       tmp.owner = request.user
       tmp.save()
-      return HttpResponseRedirect("/listings/")
+      return HttpResponseRedirect("/user/dashboard/")
   else:
     if listingID == 'N':
       form = ListingForm()

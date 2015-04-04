@@ -5,12 +5,21 @@ import datetime
 
 
 class Listing(models.Model):
+  FREQ_CHOICES = (
+    ('D', 'Daily'),
+    ('W', 'Weekly'),
+    ('M', 'Monthly'),
+    ('Q', 'Quarterly'),
+    ('S', 'Semi-Annually'),
+    ('A', 'Annually'),
+  )
   owner = models.ForeignKey(User, verbose_name="Listing Owner")
   title = models.CharField(max_length = 144, default = "Product Title")
   webpage = models.URLField(verbose_name="Listing Webpage", blank=True, null=True)
   description = models.TextField(verbose_name="Listing Description", blank=True, null=True)
   price = models.DecimalField(max_digits=9, decimal_places=2 , verbose_name="Price", blank=True, null=True)
   rating = models.DecimalField(max_digits=4, decimal_places=2 , verbose_name="Rating", default=0)
+  freqType = models.CharField(max_length = 2, verbose_name = "Frequency Type", choices = FREQ_CHOICES, default = "M")
 
   def __unicode__(self):
     return self.title

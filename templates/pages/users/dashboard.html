@@ -3,7 +3,7 @@
 {% block content %}
 <div class="static-header light">
   <div class="text-heading" style="padding-top:5px;">
-    <h1>Dashboard - {{ user }}</h1>
+    <h1>Dashboard - {{ user }} {{ pw }}</h1>
   </div>
   <div class="container">
     <div class="row">
@@ -28,6 +28,26 @@
                   {% for l in listings %}
                     <tr><td valign="middle">{{ l }}</td><td valign="middle" width=80><a href="{% url 'listings.views.edit_listing' l.pk %}" class="btn btn-primary">Manage</a></td></tr>
                   {% endfor %}
+                  {% if maxListings == -1 %}
+                    <tr><td>You have {{ listings_count }} listings so far. Add another listing!</td>
+                    <td><a href="{% url 'listings.views.edit_listing' 'N' %}" class="btn btn-primary">Create Listing</a></td></tr>
+                  {% elif listings_count < maxListings %}
+                    <tr><td>You have {{ listings_count }} listings so far, out of a possible {{ user.userprofile.maxListings }}. Add another listing!</td>
+                    <td><a href="{% url 'listings.views.edit_listing' 'N' %}" class="btn btn-primary">Create Listing</a></td></tr>
+                  {% endif %}
+                  {% if maxListings == 0 %}
+                    <tr>
+                      <td align="center">Click the button to start listing your products!<br><br>
+
+                        {% if user.userprofile.email %}
+                        <a href="{% url 'users.views.start_listing' %}" class="btn btn-primary">Let's go!</a><br><br>
+                        {% else %}
+                        <a href="{% url 'users.views.start_listing' %}" class="btn btn-primary disabled">Let's go!</a><br><br>
+                        You'll need to add an email address to your profile before you can begin.
+                        {% endif %}
+                      </td>
+                    </tr>
+                  {% endif %}
                 </table>
               </td>
             </tr>

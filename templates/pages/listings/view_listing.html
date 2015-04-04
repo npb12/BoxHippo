@@ -1,0 +1,45 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+
+<div class="container">
+<section id ="" class="section dark">
+  <div class="panel-group">
+    <div class="text-left row" style="background-color:#f8f8f8; padding: 5px; border: 1px solid #e8e8e8">
+      <div class="col-lg-12">
+        <article>
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>{{ listing.title }}</h2>
+            <span class="sub-title">{{ listing.owner.userprofile.companyName }}</span>
+          </div>
+          <div class="col-lg-6 text-right">
+            <h2>${{ listing.price }}<br><small>per month</small></h2>
+          </div>
+        </div>
+        <hr>
+          <div class="col-lg-2 text-middle">
+              <img src="{{ STATIC_URL }}img/crate.jpg" style="width:180px;">
+              <br>
+              <br>
+              <a href="" class="btn btn-primary">Product Site</a>
+              <br><br>
+          </div>
+          <div class="col-lg-10 col-pull-right">
+            <p>
+              <small>
+                {{ listing.description }}
+              </small>
+            </p>
+          </div>
+        </div>
+        </article>
+      </div>
+    </div>
+    <div class="clear">
+    <br>
+    </div>
+  </div>
+</section>
+</div>
+{% endblock %}

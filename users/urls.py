@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from users.views import profile, dashboard
+from users.views import profile, dashboard, start_listing
 
 
 urlpatterns = patterns('',
@@ -14,4 +14,5 @@ urlpatterns = patterns('',
 
     url(r'profile/$', profile),
     url(r'dashboard/$', dashboard),
+    url(r'start-listing/$', start_listing),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
