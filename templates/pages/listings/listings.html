@@ -34,7 +34,9 @@
             </div>
             <div class="col-lg-12">
               <div class="text-center">
-                <h3>${{ l.price }}</h3>
+                <h3>${{ l.price }}
+                <h5 style="font-size:15px">{{ l.get_freqType_display }}</h5>
+                </h3>
               </div>
               <div class="text-center">
                 <a href="/listings/view/{{ l.pk }}/" class="btn btn-primary btn-xs">View Details</a>
