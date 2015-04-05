@@ -3,6 +3,17 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 import datetime
 
+class Category(models.Model):
+  title = models.CharField(max_length = 50, verbose_name = "Main Category")
+
+  def __unicode__(self):
+    return self.title
+
+class SubCategory(models.Model):
+  title = models.CharField(max_length = 50, verbose_name = "Sub Category")
+
+  def __unicode__(self):
+    return self.title
 
 class Listing(models.Model):
   FREQ_CHOICES = (
@@ -13,8 +24,12 @@ class Listing(models.Model):
     ('S', 'Semi-Annually'),
     ('A', 'Annually'),
   )
+
   owner = models.ForeignKey(User, verbose_name="Listing Owner")
   title = models.CharField(max_length = 144, default = "Product Title")
+  webpage = models.URLField(verbose_name="Listing Webpage", blank=True, null=True)
+  category = models.ForeignKey(Category, verbose_name="Category", blank=True, null=True)
+  subCategory = models.ForeignKey(SubCategory, verbose_name="Sub Category", blank=True, null=True)
   webpage = models.URLField(verbose_name="Listing Webpage", blank=True, null=True)
   description = models.TextField(verbose_name="Listing Description", blank=True, null=True)
   price = models.DecimalField(max_digits=9, decimal_places=2 , verbose_name="Price", blank=True, null=True)
@@ -31,7 +46,7 @@ class Listing(models.Model):
 class ListingForm(ModelForm):
   class Meta:
     model=Listing
-    exclude=('rating', 'owner',)
+    exclude=('rating', 'owner', 'subCategory')
 
   def __init__(self, *args, **kwargs):
     self.request = kwargs.pop('request', None)
