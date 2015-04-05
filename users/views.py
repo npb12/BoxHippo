@@ -22,6 +22,7 @@ def register(request):
     if form.is_valid():
       new_user = form.save()
       profile = UserProfile(user = new_user)
+      profile.email = new_user.username
       profile.save()
       if len(request.POST['password1']) > 5:  
         new_user = authenticate(username=request.POST['username'], password=request.POST['password1'])
