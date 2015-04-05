@@ -45,10 +45,10 @@
         <div class="navigation-navbar">
           <ul class="navigation-bar navigation-bar-left">
             <li class="active"><a href="#hero">Home</a></li>
-            <li><a href="/#how-it-works">How It Works</a></li>
-            <li><a href="/#feature-list">Features</a></li>
-            <li><a href="/#prices">Prices</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/merchants/#how-it-works">How It Works</a></li>
+            <li><a href="/merchants/#features-list">Features</a></li>
+            <li><a href="/merchants/#prices">Prices</a></li>
+            <li><a href="/merchants/#contact">Contact</a></li>
             <li><a href="/listings">Listings</a></li>
           </ul>
           {% include "basics/right_nav.html" %}
@@ -59,8 +59,8 @@
 </header>
     <div id="hero" class="static-header light clearfix">
         <div class="text-heading">
-            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">BoxHippo &mdash; find <span class="highlight">your</span> box!</h1>
-            <p class="animated hiding" data-animation="fadeInDown" data-delay="500">A directory of the newest, and <span class="highlight">best</span> subscription box companies, just waiting for you.</p>
+            <h1 class="animated hiding" data-animation="bounceInDown" data-delay="0">BoxHippo &mdash; list <span class="highlight">your</span> box!</h1>
+            <p class="animated hiding" data-animation="fadeInDown" data-delay="500">Add <span class="highlight">your box</span> to our directory and get more eyes on your products, <br>ultimately bringing more customers directly to your webstore.</p>
             <ul class="list-inline">
                 <li><a href="#prices" class="btn btn-primary animated hiding" data-animation="bounceIn" data-delay="700">List Your Box</a></li>
                 <li><a href="/listings/" class="btn btn-default animated hiding" data-animation="bounceIn" data-delay="900">Browse Listings</a></li>
@@ -75,85 +75,14 @@
     
     <a id="showHere"></a>
     
-    <section id="how-it-works" class="section dark">
-    <div class="container">
-      <div class="col-sm-6 pull-right animated hiding" data-animation="fadeInRight">
-        <article class="center">
-          <h2>WAIT... WHAT'S A <span class="highlight">SUBSCRIPTION BOX</span>?</h2>
-          <div class="sub-heading">
-            A subscription box service is a paid for service where you choose a basket of goods to be sent to you once a month. 
-            The products in this basket (or <span class="highlight">box</span>) can be anything from food,<br/>personal hygiene products, or books.</br/>
-          </div>
-          <br/>
-          <p>
-          <small>
-            For example, you may pick to have a month's <br/>supply of chocolate delivered to your door every month for $20 (yum!).<br/>
-            <br/>
-            Or, you could have a month's supply of<br/>dietary supplements delivered to you every month for $30<br/>
-            <br/>
-            These are just examples with fictitious prices, but that's the general idea.<br/>
-            <br/>
-          </small>
-          <span class="highlight">BoxHippo</span> strives to provide a wide selection of <br/>subscription box offerings for you to choose from!
-          </p>
-        </article>
-      </div>
-      <div class="col-sm-6 animated hiding" data-animation="fadeInLeft">
-        <br/><br/>
-        <br/><br/>
-        <img src="{{ STATIC_URL }}img/crate.jpg" class="img-responsive pull-right" alt="process 2" />
-      </div>
-    </div>
-    </section>
-    
-    <hr class="no-margin" />
-
-	<section class="section dark" id="feature-list">
-    <div class="container">
-      <div class="section-header animated hiding center" data-animation="fadeInDown">
-        <h2>FIND THE PERFECT BOX</h2>
-        <div class="sub-heading">
-          <span class="highlight">BoxHippo</span> makes it easy for you to find the best subscription box service.<br/>
-        </div>
-      </div>
-      <div class="section-content row">
-        <div class="col-sm-4">
-          <article class="text-center animated hiding" data-animation="fadeInLeft" data-delay="0">
-            <i class="howitworks icon icon-multimedia-20 icon-active"></i>
-            <span class="h7">SEARCH</span>
-            <p class="thin" >Search for a<br/> product in our <span class="highlight">directory</span><br/>using keywords or tags</p>
-          </article>
-          <!--<span class="icon icon-arrows-04"></span>-->
-        </div>
-        <div class="col-sm-4">
-          <article class="text-center animated hiding" data-animation="fadeInLeft" data-delay="400">
-            <i class="howitworks icon icon-office-22 icon-active"></i>
-            <span class="h7">REVIEW</span>
-            <p class="thin" >Review the product's <br/> description and pictures, then<br/>follow the link to <span class="highlight">their</span> website.</p>
-          </article>
-          <!--<span class="icon icon-arrows-04"></span>-->
-        </div>
-        <div class="col-sm-4">
-          <article class="text-center animated hiding" data-animation="fadeInLeft" data-delay="800">
-            <i class="howitworks icon icon-office-56 icon-active"></i>
-            <span class="h7">SIGN UP</span>
-            <p class="thin" >Customize your box and <br/>start your new <span class="highlight">subscription</span>!</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="no-margin" />
-
-	<section class="section dark">
+  <section class="section dark" id='how-it-works'>
     <div class="container">
       <div class="col-sm-6 pull-right animated hiding" data-animation="fadeInRight">
         <img src="{{ STATIC_URL }}img/crate.jpg" class="img-responsive pull-right" alt="process 2" />
       </div>
       <div class="col-sm-6 animated hiding" data-animation="fadeInLeft">
         <article class="center">
-          <h2>LIST <span class="highlight">YOUR</span> SUBSCRIPTION BOX</h2>
+          <h2>LIST <span class="highlight">YOUR</span> BOX</h2>
           <div class="sub-heading">
             When you list your subscription box with <span class="highlight">BoxHippo</span> you can:<br/>
           </div>
@@ -180,44 +109,11 @@
   <hr class="no-margin" />
 	
 	<section id="features-list" class="section dark">
-    <div class="container animated hiding" data-animation="fadeInDown">
-      <h1>When Searching</h1>
-      <br />
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <article class="center">	
-					<i class="icon icon-emoticons-01 icon-active"></i>
-          <span class="h7">No Signup Required</span>
-          <p class="thin">There's no need to register or sign up to view any and all products in the directory. Just find what you want, and go get it!</p>
-        </article>
-      </div>                       
-			<div class="col-md-3 col-sm-6 col-xs-12">
-        <article class="center">	
-					<i class="icon icon-multimedia-20 icon-active"></i>
-          <span class="h7">Easy Search</span>
-          <p class="thin">Use a keyword search, or filter by tags to find exactly what you're looking for.</p>
-        </article>
-      </div>             
-			<div class="col-md-3 col-sm-6 col-xs-12">
-        <article class="center">	
-					<i class="icon icon-seo-icons-27 icon-active"></i>
-          <span class="h7">Responsive</span>
-          <p class="thin">Whether you're on your laptop, tablet, or smart phone, the listings will always be easy to navigate.</p>
-        </article>
-      </div>             
-			<div class="col-md-3 col-sm-6 col-xs-12">
-        <article class="center">	
-					<i class="icon icon-office-24 icon-active"></i>
-          <span class="h7">Speed</span>
-          <p class="thin">We don't want to waste your time with registrations or email flyers. Open the listings, find your product, and go!<p/>
-        </article>
-      </div>             
-    </div>
-
 
     <div class="container animated hiding" data-animation="fadeInDown">
-            <h1>For your listing</h1>
-            <br/>
-			<div class="col-md-3 col-sm-6 col-xs-12">
+      <h1>Easy, yet powerful tools</h1>
+      <br/>
+	    <div class="col-md-3 col-sm-6 col-xs-12">
                 <article class="center">	
 					<i class="icon icon-graphic-design-13 icon-active"></i>
                     <span class="h7">Listing Manager</span>
@@ -280,7 +176,7 @@
             <div class="section-header animated hiding" data-animation="fadeInDown">
                 <h2>JOIN <span class="highlight">BOX HIPPO</span></h2>
                 <div class="sub-heading">
-                  Do you run a subscription box company? List your subscription box service with <span class="highlight">BoxHippo</span> and get results.
+                  List your subscription box service with <span class="highlight">BoxHippo</span> and get results.
                 </div>
             </div>
             <div class="section-content row">
