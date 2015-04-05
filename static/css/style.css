@@ -221,6 +221,7 @@ blockquote:after { font-family: "line-icons";  position: absolute; color: #1ac6f
 .form .form-group:after { content: ''; display: block; clear: both; }
 .form .form-group+.form-group { margin-top: -10px; }
 .form .form-control { height: 50px; border: 1px solid #d1d8dd; border-radius: 0; box-shadow: 0px 0px 0px transparent; background: #fff; font-size: 17px; font-weight: 300; }
+.form .form-textarea { height: 225px; }
 .form .form-group label { text-align: right; line-height: 50px; margin-bottom: 0; }
 
 .countdown .stat-info { font-size: 14px; font-weight: 700; color: #1ac6ff; text-transform: uppercase; }

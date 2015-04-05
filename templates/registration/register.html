@@ -12,10 +12,10 @@
         <form class="form form-register dark" action="" method="POST">
           {% csrf_token %}
           <div class="form-group">
-            <label for="username" class="col-sm-4 control-label">Username</label>
+            <label for="username" class="col-sm-4 control-label">Email</label>
             <div class="col-sm-8">
               {% load widget_tweaks %}
-              {{ form.username|add_class:"form-control" }}
+              {{ form.username|add_class:"form-control email" }}
               {% if form.username.errors %}
               <br>
               {{ form.username.errors }}
