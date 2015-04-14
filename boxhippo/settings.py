@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'l#1!a!$o4q%$*c#e$9ehr8^(5_p_#(ixpekx#6+x#o&zy2(!bj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 TEMPLATE_DEBUG = True
@@ -102,6 +102,8 @@ STATICFILES_DIRS = (
   "/var/www/boxhippo/static/",
 )
 
+MEDIA_ROOT = '/var/www/boxhippo/static/'
+MEDIA_URL = '/media/'
 """
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 MEDIA_ROOT = '/var/www/boxhippo/boxhippo/media/'

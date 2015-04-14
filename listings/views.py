@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from listings.models import Listing, ListingForm
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
+
+from listings.models import Listing, ListingForm, ProductPicture, PictureForm
+
 
 # Simple function for all listings
 def listings(request):
@@ -42,7 +45,42 @@ def edit_listing(request, listingID):
       form = ListingForm(instance=l)
   return render(request, "pages/listings/edit_listing.html", { 'form':form, })
     
+
+@login_required
+def upload_picture(request, listingID):
+  listing = Listing.objects.get(pk = listingID)
+  redirect_to = reverse('users.views.dashboard')
+
+  if request.method == "POST":
+    form = PictureForm(request.POST, request.FILES)
+    if form.is_valid():
+      newdoc = ProductPicture(docfile = request.FILES['docfile'])
+      newdoc.save()
+      listing.pic = newdoc
+      listing.save()
+      return HttpResponseRedirect(redirect_to)
+  else:
+    form = PictureForm()
+
+  c = {
+    'form':form,
+    'listing':listing,
+  }
+
+  return render(request, "pages/listings/picture.html", c)
     
+
+@login_required
+def remove_picture(request, listingID):
+  listing = Listing.objects.get(pk = listingID)
+  redirect_to = reverse('users.views.dashboard')
+
+  tmp = listing.pic
+  listing.pic = None
+  listing.save()
+  tmp.delete()
+
+  return HttpResponseRedirect(redirect_to)
 
 
 # Create your views here.
