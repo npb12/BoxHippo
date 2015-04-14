@@ -1,0 +1,38 @@
+{% extends "basics/base.html" %}
+
+{% block content %}
+<div class="static-header light">
+  <div class="text-heading" style="padding-top:5px;">
+    <h1>Product Picture for:<br><h3>{{ listing.title }}</h3></h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <form class="form form-register dark" action="{% url 'listings.views.upload_picture' listing.pk %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group row">
+            <div class="col-lg-4 col-lg-offset-4">
+              {{ form.non_field.errors }}
+              {{ form.docfile }}
+              {{ form.docfile.errors }}
+              {{ form.errors }}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-6 col-lg-offset-3">
+              <br><br>
+              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save"></input>
+              <br>
+              <a href="" class="btn btn-primary btn-lg btn-block">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
+
+

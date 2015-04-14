@@ -9,9 +9,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="form form-register dark">
+          <!-- Old Style Start -->
           <table width=100% class="bh-table">
             <tr>
-              <td width="50%" valign="top">
+              <td width="35%" valign="top">
                 <span class="bh-section-heading">Profile Details</span><br>
                 <table class="table">
                   <tr><td width=80>Username:</td><td>{{ user.username }}</td></tr>
@@ -22,11 +23,33 @@
                 </table>
                 <a href="{% url 'users.views.profile' %}" class="btn btn-primary">Edit Profile</a>
               </td>
-              <td width="50%" valign="top">
+              <td width="65%" valign="top">
                 <span class="bh-section-heading">Your Listings</span><br>
                 <table class="table">
                   {% for l in listings %}
-                    <tr><td valign="middle">{{ l }}</td><td valign="middle" width=80><a href="{% url 'listings.views.edit_listing' l.pk %}" class="btn btn-primary">Manage</a></td></tr>
+                    <tr>
+                      <td valign="middle">
+                        {{ l }}<br><br>
+                        {% if l.pic.filename %}
+                        <img src="{{ STATIC_URL }}{{ l.pic.docfile }}" style="max-width:85px; max-height: 85px">
+                        {% else %}
+                        <div style="width:90px; height:90px; padding:5px; background-color: #D8D8D8; border: solid 1px grey;" class="text-center">
+                          <br>
+                          No product picture
+                        </div>
+                        {% endif %}
+                      </td>
+                      <td valign="middle" width=80>
+                        <a href="{% url 'listings.views.edit_listing' l.pk %}" class="btn btn-primary">Edit Details</a>
+                        <br>
+                        <br>
+                        {% if l.pic %}
+                        <a href="{% url 'listings.views.remove_picture' l.pk %}" class="btn btn-primary">Remove Pic</a>
+                        {% else %}
+                        <a href="{% url 'listings.views.upload_picture' l.pk %}" class="btn btn-primary">Add Pic</a>
+                        {% endif %}
+                      </td>
+                    </tr>
                   {% endfor %}
                   {% if maxListings == -1 %}
                     <tr><td>You have {{ listings_count }} listings so far. Add another listing!</td>
@@ -66,6 +89,7 @@
 
               
           </table>
+          <!-- Old Style Stop -->
         </div>
       </div>
     </div>

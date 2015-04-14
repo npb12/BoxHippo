@@ -14,21 +14,25 @@
             <span class="sub-title">{{ listing.owner.userprofile.companyName }}</span>
           </div>
           <div class="col-lg-6 text-right">
-            <h2>${{ listing.price }}<br><small>per month</small></h2>
+            <h2>${{ listing.price }}<br><small>{{ listing.get_freqType_display }}</small></h2>
           </div>
         </div>
         <hr>
-          <div class="col-lg-2 text-middle">
-              <img src="{{ STATIC_URL }}img/crate.jpg" style="width:180px;">
+          <div class="col-lg-3 text-middle">
+              {% if listing.pic %}
+              <img src="{{ STATIC_URL }}{{ listing.pic.docfile }}" class="img-listing">
+              {% else %}
+              <img src="{{ STATIC_URL }}img/crate.jpg" class="img-listing">
+              {% endif %}
               <br>
               <br>
-              <a href="" class="btn btn-primary">Product Site</a>
+              <a href="{{ listing.webpage }}" class="btn btn-primary">Product Site</a>
               <br><br>
           </div>
-          <div class="col-lg-10 col-pull-right">
+          <div class="col-lg-9 col-pull-right">
             <p>
               <small>
-                {{ listing.description }}
+                {{ listing.description|linebreaks }}
               </small>
             </p>
           </div>

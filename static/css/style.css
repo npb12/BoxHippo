@@ -91,6 +91,9 @@ hr { width: 100%; border-top: 1px solid #E9E9E9; display: inline-block; }
 .img-responsive-full { max-width: 100%; width: 100%; }
 .img-circle { -webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%; overflow:hidden;  }
 
+.img-listing-box { width: 220px; height: 220px; vertical-align: middle; }
+.img-listing { max-width: 220px; max-height: 220px; }
+
 .section { min-height: 50px; padding-top: 30px; padding-bottom: 30px; position: relative; text-align: center; }
 .wrapper { width: 70%; margin: 0 auto; }
 .container { z-index: 1; position: relative; }
